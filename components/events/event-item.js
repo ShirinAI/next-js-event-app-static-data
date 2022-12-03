@@ -8,9 +8,11 @@ function EventItem(props) {
   const { title, image, date, location, id } = props;
   const readableDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
-    moth: 'long',
+    month: 'long',
     year: 'numeric'
   });
+
+
   const formattedAddress = location.replace(',', '\n');
   const exploreLink = `/events/${id}`;
 

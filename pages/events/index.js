@@ -14,11 +14,11 @@ function AllEventsPage(){
       router.push(fullPath);
   }
 
-  return (
+  return (  
   <Fragment>
     <EventsSearch onSearch={findEvenetHandler}/>
     <EventList items={events}/>
-    <h1>All Events</h1>
+  
   </Fragment>
   )
 }
