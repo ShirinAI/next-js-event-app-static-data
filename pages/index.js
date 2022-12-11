@@ -1,18 +1,24 @@
-import { getFeaturedEvents } from '../dummy-data'
+import { getFeaturedEvents } from '../helpers/api-util';
 import EventList from '../components/events/event-list';
-import EventSearch from '../components/events/events-search';
 import classes from './index.module.css'
 
-function Home() {
-  const featuredEvents = getFeaturedEvents();
-
+function Home(props) {
   return (
     <div>
       <h1 className={classes.title}>Featured Events</h1>
       <h2 className={classes.title}>Let us make you part of this.</h2>
-        <EventList items={featuredEvents}/>
+        <EventList items={props.events}/>
     </div>
   )
 }
+export async function getStaticProps(){
+  const featuredEvents = await getFeaturedEvents();
+  return{
+    props: {
+      events: featuredEvents
+    }
+  }
+}
+
 
 export default Home;

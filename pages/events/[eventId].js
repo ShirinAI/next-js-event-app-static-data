@@ -22,6 +22,6 @@ function EventDetailPage() {
         {event.description}
       </EventContent>
     </Fragment>
-)
+ )
 }
 export default EventDetailPage
